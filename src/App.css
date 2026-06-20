@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --brand: #9b9cb3;
+  --dark: rgb(54, 48, 48);
+  --maxWidth: 1100px;
+  --pagePad: 60px;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: Roboto, Arial, sans-serif;
+}
+
+html,
+body {
+  margin: 0;
+}
+
+header {
+  background-color: var(--brand);
+  padding: 10px 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+nav ul {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 10px;
+}
+
+nav li a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: background-color 0.25s ease, color 0.25s ease;
+  white-space: nowrap;
+}
+
+nav li a:hover {
+  background-color: rgba(255, 255, 255, 0.55);
+}
+
+nav li a.active {
+  background-color: var(--dark);
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--brand);
+  color: white;
+
+  justify-content: center;
+  align-items: center;
+  padding: 10px 30px;
+  gap: 10px;
+  text-align: center;
+}
+
+.footer-logo {
+  width: 80px;
+  height: auto;
+}
+
+.footer-paragraph p {
+  margin: 0;
+  line-height: 1.5;
+  max-width: var(--maxWidth);
+}
+
+.home {
+  position: relative;
+  min-height: 800px;
+  overflow: hidden;
+  padding: 80px 30px;
+}
+
+.home::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url(/images/Backgr.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  z-index: -2;
+}
+
+.home::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: -1;
+}
+
+.home h1 {
+  margin: 0 0 12px;
+  font-weight: bolder;
+  font-size: 64px;
+  color: white;
+  line-height: 1.05;
+  max-width: var(--maxWidth);
+}
+
+.home p {
+  color: white;
+  font-size: 20px;
+  font-weight: normal;
+  margin: 0;
+  max-width: 65ch;
+}
+
+.about,
+.ministries,
+.newsevents,
+.contacts {
+  min-height: calc(800px - 160px);
+  padding: var(--pagePad) 30px;
+  max-width: var(--maxWidth);
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.about h2, .about h3, .about h4,
+.ministries h2, .ministries h3, .ministries h4,
+.newsevents h2, .newsevents h3, .newsevents h4,
+.contacts h2, .contacts h3, .contacts h4 {
+  margin: 0 0 12px;
+}
+
+.about p,
+.ministries p,
+.newsevents p,
+.contacts p {
+  margin: 0 0 18px;
+  max-width: 75ch;
+}
+
+.about ul,
+.contacts ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.about li,
+.contacts li {
+  margin-bottom: 8px;
+}
+
+.logo {
+  width: 50px;
+  height: auto;
+}
+
+.section {
+  max-width: var(--maxWidth);
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: 800;
+  margin: 0 0 18px;
+}
+
+.lead {
+  font-size: 18px;
+  opacity: 0.9;
+  margin-bottom: 24px;
+  max-width: 70ch;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 18px;
+}
+
+.card {
+  grid-column: span 6;
+  background: white;
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.6);
+}
+
+.card h4 {
+  margin: 0 0 8px;
+  font-size: 20px;
+}
+
+.card p {
+  margin: 0;
+  color: #333;
+}
+
+.card .small {
+  grid-column: span 4;
+}
+
+.card .accent {
+  border-left: 6px solid var(--brand);
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 10px;
+  background: var(--brand);
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  filter: brightness(0.95);
+}
+@media (max-width: 768px) {
+  nav ul {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  nav li a {
+    padding: 10px 12px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  nav ul {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  nav li a {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 900px) {
+  .card {grid-column: span 12;}
+  .card .small {grid-column: span 12;}
+}
